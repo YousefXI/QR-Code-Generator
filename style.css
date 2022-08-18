@@ -5,8 +5,9 @@
 :root {
    --primary: #53b3ef;
    --secondary: #3ea9eb;
-   --gray: #bbc5cf;
-   --dark-gray: #464646;
+   --gray: #999;
+   --light-gray: #ccc;
+   --dark-gray: #474747;
    --light: #ffffff;
 }
 
@@ -66,7 +67,7 @@ body {
 }
 
 .wrapper.active {
-   height: 530px;
+   height: 510px;
 }
 
 header h1 {
@@ -77,7 +78,7 @@ header h1 {
 
 header p {
    margin-top: 5px;
-   color: #474747;
+   color: var(--dark-gray);
    font-size: 16px;
    margin-bottom: 5px;
 }
@@ -97,11 +98,11 @@ header p {
 .form input {
    font-size: 18px;
    padding: 0 16px;
-   border: 1px solid #999;
+   border: 1px solid var(--gray);
 }
 
 .form button {
-   color: #fff;
+   color: var(--light);
    cursor: pointer;
    margin-top: 20px;
    font-size: 17px;
@@ -109,17 +110,14 @@ header p {
 }
 
 .wrapper .qr-code {
+   margin-top: 20px;
    display: flex;
    opacity: 0;
-   pointer-events: nonen;
+   pointer-events: none;
    padding: 33px 0;
    align-items: center;
    justify-content: center;
-   border: 1px solid #ccc;
-}
-
-.qr-code img {
-   width: 210px;
+   border: 1px solid var(--light-gray);
 }
 
 .wrapper.active .qr-code {
