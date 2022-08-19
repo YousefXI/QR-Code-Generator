@@ -2,6 +2,8 @@ const wrapper = document.querySelector(".wrapper"),
    generateBtn = wrapper.querySelector(".form button");
 qrInput = wrapper.querySelector(".form input");
 qrImg = wrapper.querySelector(".qr-code img");
+wrapInput = wrapper.querySelector(".form .wrap");
+const inputCross = wrapInput.querySelector("img");
 
 generateBtn.addEventListener("click", () => {
    let qrValue = qrInput.value;
@@ -12,11 +14,19 @@ generateBtn.addEventListener("click", () => {
    qrImg.addEventListener("load", () => {
       wrapper.classList.add("active");
       generateBtn.innerText = "Generate QR code";
+      wrapInput.classList.add("active");
    });
 });
 
 qrInput.addEventListener("keyup", () => {
    if (!qrInput.value) {
       wrapper.classList.remove("active");
+      wrapInput.classList.remove("active");
    }
+});
+
+inputCross.addEventListener("click", () => {
+   wrapper.classList.remove("active");
+   wrapInput.classList.remove("active");
+   qrInput.value = "";
 });

@@ -58,12 +58,13 @@ body {
 }
 
 .wrapper {
-   height: 240px;
+   height: 250px;
    background: #fff;
    max-width: 410px;
    border-radius: 7px;
    padding: 16px 25px;
    transition: height 200ms ease;
+   width: 410px;
 }
 
 .wrapper.active {
@@ -95,10 +96,31 @@ header p {
    border-radius: 5px;
 }
 
-.form input {
+.form .wrap {
    font-size: 18px;
    padding: 0 16px;
    border: 1px solid var(--gray);
+   width: 100%;
+   border-radius: 5px;
+   display: flex;
+}
+
+.wrap img {
+   width: 20px;
+   opacity: 0;
+   pointer-events: none;
+}
+
+.wrap.active img {
+   display: inline;
+   pointer-events: auto;
+   cursor: pointer;
+   opacity: 0.2;
+   transition: opacity 300ms 50ms ease;
+}
+
+.wrap.active img:hover {
+   opacity: 0.4;
 }
 
 .form button {
